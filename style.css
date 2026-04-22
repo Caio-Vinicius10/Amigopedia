@@ -4,20 +4,36 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #1a1a18;
+  --texto: #ffffff;
+  --card: #2c2c2a;
+  --borda: #79796f;
+  --legendas: #eeeedc;
+}
+
+:root.light {
+  --bg: #f8f7f4;
+  --texto: #1a1a18;
+  --card: #ffffff;
+  --borda: #e0ddd6;
+  --legendas: #000000;
+}
+
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #f8f7f4;
-  color: #1a1a18;
-  min-height: 100vh;
+  background: var(--bg);
+  color: var(--texto);
+  transition: background 0.2s, color 0.2s;
 }
 
 header {
-  background: #ffffff;
-  border-bottom: 0.5px solid #e0ddd6;
+  background: var(--card);
+  border-bottom: 0.5px solid var(--borda);
   padding: 20px 32px;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.3px;
+  transition: background 0.2s;
 }
 
 main {
@@ -30,48 +46,50 @@ main {
 }
 
 .container {
-  background: #ffffff;
-  border: 0.5px solid #e0ddd6;
+  background: var(--card);
+  border: 0.5px solid var(--borda);
   border-radius: 12px;
   padding: 20px 24px;
+  transition: background 0.2s;
 }
 
 .container p {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 500;
-  color: #888780;
+  color: var(--legendas);
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 input[type="text"] {
   width: 100%;
   height: 36px;
-  border: 0.5px solid #d3d1c7;
+  border: 0.5px solid var(--borda);
   border-radius: 8px;
   padding: 0 12px;
   font-size: 14px;
-  color: #1a1a18;
-  background: #f8f7f4;
+  color: var(--texto);
+  background: var(--bg);
   outline: none;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
+  transition: background 0.2s, color 0.2s;
 }
 
 input[type="text"]:focus {
-  border-color: #888780;
+  border-color: var(--texto);
 }
 
 button {
   height: 36px;
   padding: 0 16px;
   border-radius: 8px;
-  border: 0.5px solid #1a1a18;
-  background: #1a1a18;
-  color: #f8f7f4;
+  border: 0.5px solid var(--texto);
+  background: var(--texto);
+  color: var(--bg);
   font-size: 14px;
   cursor: pointer;
-  transition: opacity 0.15s;
+  transition: all 0.2s;
 }
 
 button:hover {
@@ -83,18 +101,20 @@ button:active {
 }
 
 .resultado-view p {
-  background: #ffffff;
-  border: 0.5px solid #e0ddd6;
+  background: var(--card);
+  border: 0.5px solid var(--borda);
   border-radius: 12px;
   padding: 16px 24px;
-  font-size: 14px;
-  color: #5f5e5a;
+  font-size: 15px;
+  color: var(--texto);
   min-height: 48px;
+  transition: background 0.2s, color 0.2s;
 }
 
 footer {
   text-align: center;
   padding: 32px;
-  font-size: 12px;
-  color: #b4b2a9;
+  font-size: 15px;
+  margin-top: 15px;
+  color: var(--legendas);
 }

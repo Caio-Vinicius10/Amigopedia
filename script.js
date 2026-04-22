@@ -43,3 +43,21 @@ botaoAdicionar.addEventListener("click", function() {
     amigos.push({ nome: nomeDigitado, gosta: [gostaDigitado] })
   }
 })
+
+//modo escuro//
+
+function alternarTema() {
+  const html = document.documentElement
+  html.classList.toggle('light')
+
+  const img = document.querySelector("#profile img")
+  const btn = document.querySelector("#btn-tema")
+
+  if (html.classList.contains('light')) {
+    img.setAttribute('src', 'assets/avatar-light.jpeg')
+    btn.textContent = '🌙'
+  } else {
+    img.setAttribute('src', 'assets/avatar-dark.jpeg')
+    btn.textContent = '☀️'
+  }
+}

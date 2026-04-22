@@ -26,6 +26,11 @@ Enciclopédia interativa dos meus amigos, desenvolvida com HTML, CSS e JavaScrip
 
 Projeto desenvolvido para praticar manipulação do DOM, arrays de objetos e eventos em JavaScript.
 
+## Futuras adições
+
+1. Temas de cor para modo escuro e claro 
+2. Visualizar a lista inteira dos amigos
+3. Adição de imagem
 ---
 
 Feito por Caio Vinicius — 2026
