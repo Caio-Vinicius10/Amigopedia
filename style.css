@@ -27,6 +27,8 @@ body {
 }
 
 header {
+  display: flex;
+  flex-direction: column;
   background: var(--card);
   border-bottom: 0.5px solid var(--borda);
   padding: 20px 32px;
@@ -36,7 +38,17 @@ header {
   transition: background 0.2s;
 }
 
-#btn-tema{
+.botoes{
+display: flex;
+justify-content: space-between;
+width: 100%;
+}
+
+#btn-modo {
+  margin: 0 auto;
+}
+
+#btn-tema , #btn-modo{
   margin-left: 15px;
 }
 

@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enciclopédia da amizade</title>
+    <link rel="icon" href="favicon.png" type="png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>Dicionário dos meus amigos
-        <button onclick="alternarTema()" id="btn-tema">☀️/🌙</button>
+    <header>
+         <span>Dicionário dos meus amigos</span>
+         <div class="botoes">
+            <button onclick="alternarTema()" id="btn-tema">☀️/🌙</button>
+            <button type="button" id="btn-modo">MODO</button>
+        </div>
     </header>
 <main>
 
     <div id="AlertaErro1" class="container">
-        <p>Adicionar caracteristicas:</p>
+        <p id="Modos">Adicionar caracteristicas:</p>
   <input type="text" id="input-cadastro-nome" placeholder="Nome do amigo"/>
   <input type="text" id="input-cadastro-gosta" placeholder="O que gosta?"/>
   <button type="button" id="btn-adicionar">Adicionar</button>
@@ -23,6 +28,7 @@
 
     <div id="AlertaErro2" class="container">
         <p>Pesquisar sobre:</p>
+
         <form>
             <div class="caixa-nome">
                 <div class="inputName">
@@ -40,10 +46,8 @@
     </div>
 
     <div class="resultado-view">
-        <p id="resultado">Esse amigo gosta de: </p>
+        <p id="resultado">Esse amigo gosta de:</p>
     </div>
-    
-
 </main>
 
 <footer>
