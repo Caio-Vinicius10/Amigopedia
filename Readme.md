@@ -38,4 +38,6 @@ Projeto desenvolvido para praticar manipulação do DOM, arrays de objetos e eve
 
 1. Sei que a adição das mensagens de sucesso e erro foram feitos da forma mais complexa desnecessariamente e que poderia ter feito o elemento p no html e manipular com js. Porém, foi feito com o intuito de praticar um pouco a complexidade de certas coisas do js, por mais que tenha uma maneira mais facil.
 
+2. Adição de botão de modo para alternancia do cadastro. Uma das maiores dificuldade enfrentadas durante meu aprendizado de JavaScript, porém, fiz muito pouco de uso de IA para o codigo.
+
 Feito por Caio Vinicius — 2026
