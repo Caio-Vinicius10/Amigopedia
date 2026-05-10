@@ -12,7 +12,8 @@
          <span>Dicionário dos meus amigos</span>
          <div class="botoes">
             <button onclick="alternarTema()" id="btn-tema">☀️/🌙</button>
-            <button type="button" id="btn-modo">MODO</button>
+            <button type="button" id="btn-modo">Modo de edição</button>
+            <button type="button" id="btn-lista">Lista</button>
         </div>
     </header>
 <main>
@@ -23,8 +24,6 @@
   <input type="text" id="input-cadastro-gosta" placeholder="O que gosta?"/>
   <button type="button" id="btn-adicionar">Adicionar</button>
 </div>
-
-
 
     <div id="AlertaErro2" class="container">
         <p>Pesquisar sobre:</p>
@@ -48,6 +47,11 @@
     <div class="resultado-view">
         <p id="resultado">Esse amigo gosta de:</p>
     </div>
+
+    <div class="container" id="lista-view">
+    <ul id="ul-amigos"> </ul>
+    </div>
+
 </main>
 
 <footer>

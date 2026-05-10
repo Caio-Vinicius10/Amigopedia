@@ -127,6 +127,22 @@ button:active {
   transition: background 0.2s, color 0.2s;
 }
 
+#lista-view{
+  position: fixed;
+  margin-top: 32px;
+  top: 100px;
+  right: 0;
+  bottom: 620px;
+  width: 280px;
+  z-index: 100;
+  display: none;
+}
+
+
+.visivel {
+  display: block !important;
+}
+
 footer {
   text-align: center;
   padding: 32px;

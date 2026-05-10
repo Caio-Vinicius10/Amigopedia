@@ -1,10 +1,34 @@
-
+//Abrir a lista de amizade
 
 const amigos = [
   { nome: "Giselle", gosta: ["JiuJitsu"] },
   { nome: "Lucas", gosta: ["Futebol"] },
   { nome: "Ana", gosta: ["Música"] }
 ]
+
+const btnLista = document.querySelector("#btn-lista")
+const listaView = document.querySelector("#lista-view")
+const ulAmigos = document.querySelector("#ul-amigos")
+
+varrerArray()
+
+btnLista.addEventListener ("click", abrirLista)
+
+function abrirLista() {
+  console.log("função chamada")
+  console.log(listaView.classList)
+listaView.classList.toggle('visivel')
+}
+
+function varrerArray(){
+ulAmigos.innerHTML = ""
+amigos.forEach(function(amigo) {
+  let listaAmigos = document.createElement("li")
+  listaAmigos.id = "amigoLista"
+  listaAmigos.textContent = amigo.nome
+   ulAmigos.appendChild(listaAmigos)   
+  })
+}
 
 //Busca//
 const botao = document.querySelector("#btn-buscar")
@@ -17,7 +41,8 @@ function buscar(){
    return 
   }else {
     AlertaMensagem2.remove()
-}
+  }
+
   
   const nomeBuscado = inputbusca.value.trim()
 
@@ -29,18 +54,17 @@ function buscar(){
     resultado.textContent = "Esse amigo gosta de: " + amigaEncontrada.gosta.join(", ")
   } else {
     resultado.textContent = "Amigo não encontrado"
-  }
 }
 
 botao.addEventListener("click", buscar)
-
 inputbusca.addEventListener("keydown", function(evento){
    if (evento.key === "Enter"){
       evento.preventDefault()  
       buscar()
   }
 })
- 
+}
+
 
 //Adicionar novos gostos//
 
@@ -115,6 +139,7 @@ function cadastroAmigo(){
 AlertaMensagemSucesso1.remove()
 
     amigos.push({ nome: nomeDigitado, gosta: [gostaDigitado] })
+    varrerArray()
   AlertaSucesso1.appendChild(AlertaMensagemSucesso1)
       setTimeout(function(){
       AlertaMensagemSucesso1.remove()
