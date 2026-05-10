@@ -23,19 +23,27 @@ Enciclopédia interativa dos meus amigos, desenvolvida com HTML, CSS e JavaScrip
 4. Cadastre seus amigos e pesquise à vontade
 
 ## Aprendizados
-pratiquei a manipulação o DOM — criar elementos, appendar, remover e esconder sem recarregar a página. 
+Pratiquei a manipulação o DOM — criar elementos, appendar, remover e esconder sem recarregar a página. 
+
 Entendi a diferença entre selecionar um elemento e guardar um estado em variável, que me travou bastante no começo.
+
 Aprendi a ter eventos que se acionam pelo teclado e clique.
+
 Descobri que refatorar código em funções separadas evita repetição e facilita manutenção.
+
 Pratiquei busca em arrays com `.find()` e `.includes()`, e entendi por que `.toLowerCase()` é essencial pra comparações.
+
 Aprendi a usar `position: fixed` pra criar painéis que ficam fixos na tela independente do scroll.
+
+Aprendi que `evento.target` dá acesso ao elemento clicado dentro de um listener e a criação da função de percorrer na array e o uso do 'forEach.
 
 
 ## Futuras adições desejadas
 
-1. Temas de cor para modo escuro e claro 
+1. Temas de cor além do modo claro e escuro
 -*FEITA*-2. Visualizar a lista inteira dos amigos
 3. Adição de imagem
+4. Animações
 
 ## Nota 
 
@@ -49,6 +57,9 @@ Essa aba serve para mostrar a linha cronologica das edições e meu aprendizado 
 
 3. A listagem de amigos foi implementada com forEach e createElement, renderizando o array dinamicamente. O painel usa classList.toggle com !important no CSS para sobrescrever o none: .
 A lista se atualiza automaticamente ao cadastrar um novo amigo.
-Descobri palavras para usar no gir, como feat, fit, perf, chore etc. passarei a usar
+Descobri palavras para usar no gir, como feat, fit, perf, chore etc. passarei a usar.
+
+4. A remoção de amigos foi implementada com `splice` e `findIndex`. 
+usando `evento.target` ao elemento dentro da listener, 
 
 Feito por Caio Vinicius — 2026

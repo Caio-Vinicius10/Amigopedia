@@ -8,26 +8,46 @@ const amigos = [
 
 const btnLista = document.querySelector("#btn-lista")
 const listaView = document.querySelector("#lista-view")
-const ulAmigos = document.querySelector("#ul-amigos")
+const ulAmigos = document.querySelector("#ulAmigos")
 
 varrerArray()
 
 btnLista.addEventListener ("click", abrirLista)
 
 function abrirLista() {
-  console.log("função chamada")
-  console.log(listaView.classList)
 listaView.classList.toggle('visivel')
 }
 
 function varrerArray(){
+
 ulAmigos.innerHTML = ""
+
 amigos.forEach(function(amigo) {
+
   let listaAmigos = document.createElement("li")
+  const botaoRemover = document.createElement("button")
+
+  botaoRemover.id = "botaoLista"
+  botaoRemover.className = "botaoLista"
+  botaoRemover.textContent = "remove"
+  botaoRemover.dataset.nome = amigo.nome
+
   listaAmigos.id = "amigoLista"
   listaAmigos.textContent = amigo.nome
-   ulAmigos.appendChild(listaAmigos)   
+
+  botaoRemover.addEventListener ("click", removeAmigo)
+   listaAmigos.appendChild(botaoRemover)   
+   ulAmigos.appendChild(listaAmigos) 
   })
+}
+
+function removeAmigo(evento) {
+  const nome = evento.target.dataset.nome
+  const index = amigos.findIndex(function(amigo) {
+    return amigo.nome === nome
+  })
+  amigos.splice(index, 1)
+  varrerArray()
 }
 
 //Busca//
@@ -54,6 +74,7 @@ function buscar(){
     resultado.textContent = "Esse amigo gosta de: " + amigaEncontrada.gosta.join(", ")
   } else {
     resultado.textContent = "Amigo não encontrado"
+ }
 }
 
 botao.addEventListener("click", buscar)
@@ -62,8 +83,8 @@ inputbusca.addEventListener("keydown", function(evento){
       evento.preventDefault()  
       buscar()
   }
-})
-}
+ })
+
 
 
 //Adicionar novos gostos//
@@ -76,6 +97,12 @@ const btnModo = document.querySelector("#btn-modo")
 let modoAtual = "caracteristica"
 
 botaoAdicionar.addEventListener("click", cadastrar)
+inputCadastroGosta.addEventListener("keydown", function(evento){
+   if (evento.key === "Enter"){
+      evento.preventDefault()  
+      cadastrar()
+  }
+})
 
 btnModo.addEventListener("click", alternarModo)
 
@@ -113,6 +140,7 @@ function cadastro(){
     return amigo.nome.toLowerCase().includes(nomeDigitado.toLowerCase())
 })
 
+
 AlertaMensagemSucesso1.remove()
 
   if (amigoExistente) {
@@ -127,8 +155,7 @@ AlertaMensagemSucesso1.remove()
 
 function cadastroAmigo(){
   if (inputCadastroNome.value.trim() === "" || inputCadastroGosta.value.trim() === "") {
-    return AlertaErro1.appendChild(AlertaMensagem1
-    )   
+    return AlertaErro1.appendChild(AlertaMensagem1)   
   }else{
     AlertaMensagem1.remove()
 }
