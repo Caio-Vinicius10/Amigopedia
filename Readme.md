@@ -60,6 +60,8 @@ A lista se atualiza automaticamente ao cadastrar um novo amigo.
 Descobri palavras para usar no gir, como feat, fit, perf, chore etc. passarei a usar.
 
 4. A remoção de amigos foi implementada com `splice` e `findIndex`. 
-usando `evento.target` ao elemento dentro da listener, 
+usando `evento.target` ao elemento dentro da listener. 
+
+5. Pequenas melhorias incrementais, como um contador de amigos e placeholder's diferentes.
 
 Feito por Caio Vinicius — 2026

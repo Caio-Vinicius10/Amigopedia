@@ -11,6 +11,7 @@ const listaView = document.querySelector("#lista-view")
 const ulAmigos = document.querySelector("#ulAmigos")
 
 varrerArray()
+document.querySelector("#contador").textContent = "Quantidade de amigos:" + amigos.length
 
 btnLista.addEventListener ("click", abrirLista)
 
@@ -19,10 +20,8 @@ listaView.classList.toggle('visivel')
 }
 
 function varrerArray(){
-
-ulAmigos.innerHTML = ""
-
-amigos.forEach(function(amigo) {
+  ulAmigos.innerHTML = ""
+  amigos.forEach(function(amigo) {
 
   let listaAmigos = document.createElement("li")
   const botaoRemover = document.createElement("button")
@@ -48,6 +47,8 @@ function removeAmigo(evento) {
   })
   amigos.splice(index, 1)
   varrerArray()
+  document.querySelector("#contador").textContent = "Quantidade de amigos:" + amigos.length
+
 }
 
 //Busca//
@@ -101,7 +102,7 @@ inputCadastroGosta.addEventListener("keydown", function(evento){
    if (evento.key === "Enter"){
       evento.preventDefault()  
       cadastrar()
-  }
+  } 
 })
 
 btnModo.addEventListener("click", alternarModo)
@@ -109,12 +110,16 @@ btnModo.addEventListener("click", alternarModo)
 function alternarModo() {
   if (modoAtual === "amigo") {
     modoAtual = "caracteristica"
-      document.querySelector("#btn-modo").textContent = "CARACTERISTICAS"
+    document.querySelector("#btn-modo").textContent = "CARACTERISTICAS"
     document.querySelector("#Modos").textContent = "ADICIONAR CARACTERISTICAS"
+  inputCadastroNome.placeholder = "Nome do amigo existente"
+  inputCadastroGosta.placeholder = "Qual o novo gosto dele?"
   } else {
     modoAtual = "amigo"
-     document.querySelector("#btn-modo").textContent = "AMIGO"
+    document.querySelector("#btn-modo").textContent = "AMIGO"
     document.querySelector("#Modos").textContent = "ADICIONAR AMIGO"
+  inputCadastroNome.placeholder = "Nome do seu novo amigo"
+  inputCadastroGosta.placeholder = "Qual o gosto que você descobriu sobre ele?"
   }
 }
 
@@ -167,6 +172,7 @@ AlertaMensagemSucesso1.remove()
 
     amigos.push({ nome: nomeDigitado, gosta: [gostaDigitado] })
     varrerArray()
+  document.querySelector("#contador").textContent = "Quantidade de amigos:" + amigos.length
   AlertaSucesso1.appendChild(AlertaMensagemSucesso1)
       setTimeout(function(){
       AlertaMensagemSucesso1.remove()

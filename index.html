@@ -10,6 +10,7 @@
 <body>
     <header>
          <span>Dicionário dos meus amigos</span>
+         <p id="contador"></p>
          <div class="botoes">
             <button onclick="alternarTema()" id="btn-tema">☀️/🌙</button>
             <button type="button" id="btn-modo">Modo de edição</button>
@@ -19,16 +20,16 @@
 <main>
 
     <div id="AlertaErro1" class="container">
-        <p id="Modos">Adicionar caracteristicas:</p>
-  <input type="text" id="input-cadastro-nome" placeholder="Nome do amigo"/>
-  <input type="text" id="input-cadastro-gosta" placeholder="O que gosta?"/>
+        <p id="Modos"></p>
+  <input type="text" id="input-cadastro-nome" placeholder=""/>
+  <input type="text" id="input-cadastro-gosta" placeholder=""/>
   <button type="button" id="btn-adicionar">Adicionar</button>
 </div>
 
     <div id="AlertaErro2" class="container">
         <p>Pesquisar sobre:</p>
 
-        <form>
+        <form autocomplete="off">
             <div class="caixa-nome">
                 <div class="inputName">
                     <input type="text" name="input-nome" id="input-nome"
